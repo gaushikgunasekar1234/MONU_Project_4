@@ -7,6 +7,11 @@ import streamlit as st
 from pathlib import Path
 # from sklearn.feature_extraction.text import TfidfVectorizer  
 import spacy
+from spacy.cli import download
+# Ensure the spaCy model is downloaded
+download("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
+
 from sklearn import model_selection
 import tensorflow as tf
 from tensorflow import keras
@@ -44,7 +49,7 @@ def load_token(news_df):
     tokenizer.fit_on_texts(news_df['text'])
     return tokenizer
 
-nlp = load_nlp(r"C:\Users\priya\en_core_web_sm-3.5.0")
+# nlp = load_nlp(r"C:\Users\priya\en_core_web_sm-3.5.0")
 loaded_model= load_my_model('models/model_biLSTM.h5')
 news_df=load_df('Resources/nlp_cleaned_news.csv')
 tokenizer = load_token(news_df)
