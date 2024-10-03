@@ -1,8 +1,8 @@
 streamlit
 spacy==3.5.0
 thinc==8.0.0
-tensorflow
-keras
+tensorflow==2.10.0  # Specify a version compatible with your code
+keras==2.10.0       # Specify a version compatible with your code
 pandas
 numpy
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
